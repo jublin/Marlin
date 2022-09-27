@@ -127,10 +127,11 @@
   #define HOTEND7_SH_C_COEFF                 0 // Steinhart-Hart C coefficient
 #endif
 
+//Jublin: got these values from https://www.reddit.com/r/3Dprinting/comments/vn7qde/davinci_10_stock_bed_thermistor_values_to_use/
 #if TEMP_SENSOR_BED == 1000
   #define BED_PULLUP_RESISTOR_OHMS        4700 // Pullup resistor
-  #define BED_RESISTANCE_25C_OHMS       100000 // Resistance at 25C
-  #define BED_BETA                        3950 // Beta value
+  #define BED_RESISTANCE_25C_OHMS       365000  // Resistance at 25C
+  #define BED_BETA                        2495 // Beta value
   #define BED_SH_C_COEFF                     0 // Steinhart-Hart C coefficient
 #endif
 
