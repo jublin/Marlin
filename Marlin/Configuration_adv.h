@@ -127,11 +127,13 @@
   #define HOTEND7_SH_C_COEFF                 0 // Steinhart-Hart C coefficient
 #endif
 
-//Jublin: got these values from https://www.reddit.com/r/3Dprinting/comments/vn7qde/davinci_10_stock_bed_thermistor_values_to_use/
+//Jublin: got these values from https://steelcityelectronics.com/da-vinci-3d-printer/da-vinci-print-bed-thermistor/
+// https://www.thinksrs.com/downloads/programs/therm%20calc/ntccalibrator/ntccalculator.html
+
 #if TEMP_SENSOR_BED == 1000
   #define BED_PULLUP_RESISTOR_OHMS        4700 // Pullup resistor
-  #define BED_RESISTANCE_25C_OHMS       365000  // Resistance at 25C
-  #define BED_BETA                        2495 // Beta value
+  #define BED_RESISTANCE_25C_OHMS       398255  // Resistance at 25C
+  #define BED_BETA                        3292 // Beta value
   #define BED_SH_C_COEFF                     0 // Steinhart-Hart C coefficient
 #endif
 
@@ -640,7 +642,7 @@
 #define CHAMBER_AUTO_FAN_PIN -1
 #define COOLER_AUTO_FAN_PIN -1
 
-#define EXTRUDER_AUTO_FAN_TEMPERATURE 45
+#define EXTRUDER_AUTO_FAN_TEMPERATURE 40
 #define EXTRUDER_AUTO_FAN_SPEED 255   // 255 == full speed
 #define CHAMBER_AUTO_FAN_TEMPERATURE 30
 #define CHAMBER_AUTO_FAN_SPEED 255
@@ -1665,11 +1667,11 @@
   //#define CONFIGURATION_EMBEDDING
 
   // Add an optimized binary file transfer mode, initiated with 'M28 B1'
-  //#define BINARY_FILE_TRANSFER
+  #define BINARY_FILE_TRANSFER
 
   #if ENABLED(BINARY_FILE_TRANSFER)
     // Include extra facilities (e.g., 'M20 F') supporting firmware upload via BINARY_FILE_TRANSFER
-    //#define CUSTOM_FIRMWARE_UPLOAD
+    #define CUSTOM_FIRMWARE_UPLOAD
   #endif
 
   /**
@@ -2459,14 +2461,14 @@
  *
  * Note that M207 / M208 / M209 settings are saved to EEPROM.
  */
-//#define FWRETRACT
+#define FWRETRACT
 #if ENABLED(FWRETRACT)
   #define FWRETRACT_AUTORETRACT             // Override slicer retractions
   #if ENABLED(FWRETRACT_AUTORETRACT)
     #define MIN_AUTORETRACT             0.1 // (mm) Don't convert E moves under this length
     #define MAX_AUTORETRACT            10.0 // (mm) Don't convert E moves over this length
   #endif
-  #define RETRACT_LENGTH                3   // (mm) Default retract length (positive value)
+  #define RETRACT_LENGTH                5   // (mm) Default retract length (positive value)
   #define RETRACT_LENGTH_SWAP          13   // (mm) Default swap retract length (positive value)
   #define RETRACT_FEEDRATE             45   // (mm/s) Default feedrate for retracting
   #define RETRACT_ZRAISE                0   // (mm) Default retract Z-raise
