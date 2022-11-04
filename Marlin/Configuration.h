@@ -1171,7 +1171,7 @@
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
 //Z from https://blog.prusa3d.com/calculator_3416/
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 76.191, 73, 2560, 96.40 }  //Jublin
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 78.48, 75.41, 2519.69, 96.39 }  //Jublin
 
 
 /**
@@ -1704,7 +1704,7 @@
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
 #define X_MIN_POS -10
 #define Y_MIN_POS -10
-#define Z_MIN_POS -1.575 //Currently using E3dv6 hotend with custom cartidge replacement.
+#define Z_MIN_POS -1.435 //Currently using E3dv6 hotend with custom cartidge replacement.
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
 #define Z_MAX_POS 200
@@ -3310,10 +3310,10 @@
   #endif
 
   // Use some of the NeoPixel LEDs for static (background) lighting
-  #define NEOPIXEL_BKGD_INDEX_FIRST   0 // Index of the first background LED
-  #define NEOPIXEL_BKGD_INDEX_LAST    5 // Index of the last background LED
+ // #define NEOPIXEL_BKGD_INDEX_FIRST   0 // Index of the first background LED
+  //#define NEOPIXEL_BKGD_INDEX_LAST    5 // Index of the last background LED
   //#define NEOPIXEL_BKGD_COLOR { 255, 255, 255, 0 }  // R, G, B, W
-  #define NEOPIXEL_BKGD_ALWAYS_ON       // Keep the backlight on when other NeoPixels are off
+  //#define NEOPIXEL_BKGD_ALWAYS_ON       // Keep the backlight on when other NeoPixels are off
 #endif
 
 /**
